@@ -1,5 +1,7 @@
 # Calorie & Energy Needs Calculator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A lightweight, embeddable calorie and energy-needs calculator designed for shared cPanel hosting using **PHP, CSS, and vanilla JavaScript**.
 
 The calculator estimates resting energy expenditure, total daily energy expenditure (TDEE), and suggested calorie targets for **weight maintenance, weight loss, or weight gain**. It can also use a user-entered BMR/RMR value from a metabolic or body-composition report.
@@ -47,6 +49,7 @@ Calorie-Calculator/
 ├── calorie-calculator.css
 ├── calorie-calculator.js
 ├── embed-on-tfaworld.html
+├── LICENSE
 └── README.md
 ```
 
@@ -326,4 +329,6 @@ Issues and pull requests are welcome. Please include enough detail to reproduce 
 
 ## License
 
-No open-source license has been assigned yet. All rights are reserved unless a license is added to this repository.
+This project is licensed under the **MIT License**. See [`LICENSE`](LICENSE) for the full license text.
+
+Copyright © 2026 Vinay Shankar.
