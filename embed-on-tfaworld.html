@@ -1,0 +1,36 @@
+<!-- TFA Calorie & Energy Needs Calculator -->
+<div id="tfa-calorie-calculator-wrap" style="width:100%;max-width:100%;overflow:hidden;">
+  <iframe
+      id="tfa-calorie-calculator"
+      src="https://apps.tfaworld.org/calorie-calculator.php"
+      title="TFA Calorie & Energy Needs Calculator"
+      width="100%"
+      height="1200"
+      loading="lazy"
+      sandbox="allow-scripts allow-same-origin"
+      style="width:100%;border:0;display:block;overflow:hidden;">
+  </iframe>
+</div>
+
+<script>
+(() => {
+  const iframe = document.getElementById('tfa-calorie-calculator');
+  const calculatorOrigin = 'https://apps.tfaworld.org';
+
+  if (!iframe) return;
+
+  window.addEventListener('message', (event) => {
+    if (event.origin !== calculatorOrigin) return;
+    if (event.source !== iframe.contentWindow) return;
+
+    const data = event.data;
+    if (!data || data.type !== 'TFA_CALCULATOR_HEIGHT') return;
+
+    const height = Number(data.height);
+    if (!Number.isFinite(height)) return;
+    if (height < 300 || height > 10000) return;
+
+    iframe.style.height = Math.ceil(height) + 'px';
+  });
+})();
+</script>
